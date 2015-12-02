@@ -17,6 +17,7 @@ class SecurityProviderBase(object):
     """
     plugins = {
         'none': 'pymco.security.none.NoneProvider',
+        'psk': 'pymco.security.psk.PSKProvider',
         'ssl': 'pymco.security.ssl.SSLProvider',
     }
 

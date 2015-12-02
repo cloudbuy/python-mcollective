@@ -40,6 +40,6 @@ class PyTest(test.test):
 setuptools.setup(setup_requires=('d2to1',),
                  install_requires=REQ,
                  tests_require=TREQ,
-                 extras_require={'ssl': ('pycrypto', 'PyYAML')},
+                 extras_require={'ssl': ('pycrypto', 'PyYAML'), 'psk': ('rubymarshal',)},
                  cmdclass={'test': PyTest},
                  d2to1=True)
