@@ -73,7 +73,9 @@ class SimpleAction(object):
                             self.get_target(),
                             **{'reply-to': reply_target})
         self.logger.debug("receiving replies, timeout={t}".format(t=timeout))
-        result = self.connector.receive(timeout=timeout)
-        self.logger.debug("disconnecting")
-        self.connector.disconnect()
+        try:
+            result = self.connector.receive(timeout=timeout)
+        finally:
+            self.logger.debug("disconnecting")
+            self.connector.disconnect()
         return result
