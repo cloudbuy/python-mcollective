@@ -11,12 +11,13 @@ from setuptools.command import test
 
 pipsess = download.PipSession()
 
-REQ = list(
+REQ =
     {dep.name for dep in
-     req.parse_requirements('requirements/base.txt', session=pipsess)})
+     req.parse_requirements('requirements/base.txt', session=pipsess)}
 TREQ = list(
     {dep.name or dep.url for dep in
      req.parse_requirements('requirements/tests.txt', session=pipsess)}) - REQ
+REQ = list(REQ)
 
 try:
     import importlib  # noqa
