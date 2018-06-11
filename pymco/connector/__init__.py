@@ -57,7 +57,7 @@ class BaseConnector(object):
         :arg bool wait: wait for connection to be established or not.
         :return: ``self``
         """
-        if not self.connection.connected:
+        if not self.connection.is_connected():
             self.connection.start()
             user, password = self.config.get_user_and_password(
                 self.get_current_host_and_port())
