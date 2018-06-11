@@ -11,8 +11,7 @@ from setuptools.command import test
 
 pipsess = download.PipSession()
 
-REQ =
-    {dep.name for dep in
+REQ = {dep.name for dep in
      req.parse_requirements('requirements/base.txt', session=pipsess)}
 TREQ = list(
     {dep.name or dep.url for dep in
