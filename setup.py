@@ -6,7 +6,10 @@ except ImportError:
     use_setuptools()
     import setuptools
 
-from pip import download, req
+try:
+    from pip import download, req
+except ImportError:
+    from pip._internal import download, req
 from setuptools.command import test
 
 pipsess = download.PipSession()
